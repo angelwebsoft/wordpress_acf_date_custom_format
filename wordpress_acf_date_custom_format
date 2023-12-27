@@ -1,0 +1,19 @@
+<?php
+    // Get the raw start date value from the ACF field
+    $date_start_raw = get_sub_field('forecasts_date_start');
+
+    // Get the raw end date value from the ACF field
+    $date_end_raw = get_sub_field('forecasts_date_end');
+
+    // Create DateTime objects from the raw start and end dates
+    $date_start_object = new DateTime($date_start_raw);
+    $date_end_object = new DateTime($date_end_raw);
+
+    // Format the start and end dates as "M Y" (e.g., Dec 2023)
+    $formatted_date_start = $date_start_object->format('M Y');
+    $formatted_date_end = $date_end_object->format('M Y');
+
+    // Output the formatted start and end dates
+    echo $formatted_date_start . ' - ';
+    echo $formatted_date_end;
+?>
